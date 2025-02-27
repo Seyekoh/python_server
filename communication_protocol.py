@@ -220,6 +220,6 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
         self.wfile.write(json.dumps(response).encode('utf-8'))
 
 if __name__ == "__main__":
-    with socketserver.TCPServer(("", PORT), RequestHandler) as httpd:
+    with socketserver.TCPServer(("127.0.0.1", PORT), RequestHandler) as httpd:
         print(f"Serving at port {PORT}")
         httpd.serve_forever()
